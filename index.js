@@ -10,4 +10,6 @@ const checkPermission = (userName, permissionTitle, uuid) => {
     });
 }
 
+export default checkPermission;
+
 // module.exports = {checkPermission}
