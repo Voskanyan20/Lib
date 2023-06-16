@@ -1,9 +1,11 @@
 {
-  "name": "lib",
+  "name": "role-base-control-lib",
   "version": "1.0.0",
   "description": "This is a ARBAC lib",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
