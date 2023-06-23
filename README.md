@@ -1,8 +1,5 @@
-# transition-element-property-helper
-Simple plugin for test transition property for site styles. The test results appear in the console.
-
-[![npm-version](https://img.shields.io/npm/v/transition-element-property-helper)](https://www.npmjs.com/package/role-base-control-lib)
-[![repo-size](https://img.shields.io/github/repo-size/AntonPluginsCreator/transition-element-property-helper)](https://github.com/AntonPluginsCreator/transition-element-property-helper)
+# check-permission-lib
+Lib for check User Permissions.
 
 ## Table of contents
 - [Installation](#installation)
@@ -14,19 +11,14 @@ Simple plugin for test transition property for site styles. The test results app
 
 One file with all the functionality of the plugin
 ```javascript
-./index.js
-```
-
-One minified file with all the functionality of the plugin
-```html
-<script src="src/transition-element-property-helper.min.js"></script>
+index.js
 ```
 <div id='installation'></div>
 
 ## Installation
 
 ```bash
-npm i role-base-control-lib
+npm i check-permission-lib
 ```
 
 <div id='start-plugin'></div>
@@ -34,7 +26,7 @@ npm i role-base-control-lib
 ## Start Plugin
 
 ```javascript
-new checkPermission("userName" , "permissionTitle").start();
+checkPermission("userName");
 ```
 <div id='functions'></div>
 
@@ -43,7 +35,7 @@ new checkPermission("userName" , "permissionTitle").start();
 Function that starts the user permission test when the checkPermission function starts
 
 ```javascript
-new checkPermission("userName" , "permissionTitle").start();
+checkPermission("userName");
 ```
 <div id='result-plugin'></div>
 
@@ -52,8 +44,8 @@ new checkPermission("userName" , "permissionTitle").start();
 
 #### Start
 ```
-Success response : permission checked : permission title,
+Success response (200 : Permissions object)
 
-Bad response : You have not that permission
+Bad response (400 bad Request)
 
 ```
