@@ -1,6 +1,6 @@
 {
   "name": "send-tables-to-db-lib",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "This is a lib who send needed tables from one to another db",
   "main": "index.js",
   "scripts": {
