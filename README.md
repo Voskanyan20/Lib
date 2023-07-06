@@ -1,5 +1,5 @@
 # check-permission-lib
-Lib for send needed tables from one to another db.
+Lib for send needed tables with his columns from one to another db.
 
 ## Table of contents
 - [Installation](#installation)
@@ -18,7 +18,7 @@ index.js
 ## Installation
 
 ```bash
-npm i check-permission-lib
+npm i send-tables-to-db-lib
 ```
 
 <div id='start-plugin'></div>
@@ -32,7 +32,7 @@ npm run dev or node indexjs
 
 ## Functions
 
-Function that starts the user permission test when the checkPermission function starts
+Function that starts will send a few tables with his columns to another db
 
 ```javascript
 createTable(tableName);
