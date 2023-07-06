@@ -19,27 +19,21 @@ const destinationClient = new Client({
 sourceClient.connect()
 destinationClient.connect()
 
-
-
-const createTable = (tableName) => {
-
+const createTable = tableName => {
   const query = `SELECT column_name, data_type FROM information_schema.columns WHERE table_name = '${tableName}'`
 
   sourceClient.query(query, (err, res) => {
     if (err) {
       console.error('Error retrieving table structure:', err)
     } else {
-      // Get the column names and data types
       const columns = res.rows.map(row => ({
         name: row.column_name,
         type: row.data_type
       }))
 
-      // Call a function to create the table in the destination database
       createTableInDestination(columns)
     }
 
-    // Disconnect from the databases
     // sourceClient.end()
     // destinationClient.end()
   })
@@ -54,7 +48,6 @@ const createTable = (tableName) => {
         console.error('Error creating table in the destination database:', err)
       } else {
         console.log('Table created successfully in the destination database.')
-        // Call a function to copy the data from the source to the destination table
         copyDataToDestination()
       }
     })
@@ -70,14 +63,13 @@ const createTable = (tableName) => {
         console.log('Data copied successfully to the destination database.')
       }
 
-      // Disconnect from the databases
       // sourceClient.end()
       // destinationClient.end()
     })
   }
 }
+
 const names = ['roles', 'permissions']
 names.map(name => {
   createTable(name)
 })
-

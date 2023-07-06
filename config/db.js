@@ -16,22 +16,22 @@
 
 // module.exports = { sourceDB, destinationDB };
 
-const { Client } = require('pg');
+// const { Client } = require('pg');
 
-const sourceClient = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'postgres',
-  port: '5432',
-});
+// const sourceClient = new Client({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'postgres',
+//   password: 'postgres',
+//   port: '5432',
+// });
 
-const destinationClient = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres1',
-  password: 'postgres',
-  port: '5432',
-});
+// const destinationClient = new Client({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'postgres1',
+//   password: 'postgres',
+//   port: '5432',
+// });
 
-module.exports = { sourceConfig, destinationConfig };
+// module.exports = { sourceConfig, destinationConfig };
