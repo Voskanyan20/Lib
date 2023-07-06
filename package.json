@@ -1,7 +1,7 @@
 {
-  "name": "check-permission-lib",
-  "version": "1.0.0",
-  "description": "This is a lib who check user permissions",
+  "name": "send-tables-to-db-lib",
+  "version": "1.0.1",
+  "description": "This is a lib who send needed tables from one to another db",
   "main": "index.js",
   "scripts": {
     "postinstall": "node index.js",
