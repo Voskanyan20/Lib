@@ -1,5 +1,5 @@
 # check-permission-lib
-Lib for check User Permissions.
+Lib for send needed tables from one to another db.
 
 ## Table of contents
 - [Installation](#installation)
@@ -25,8 +25,8 @@ npm i check-permission-lib
 
 ## Start Plugin
 
-```javascript
-checkPermission("userName");
+```Terminal
+npm run dev or node indexjs
 ```
 <div id='functions'></div>
 
@@ -35,7 +35,7 @@ checkPermission("userName");
 Function that starts the user permission test when the checkPermission function starts
 
 ```javascript
-checkPermission("userName");
+createTable(tableName);
 ```
 <div id='result-plugin'></div>
 
@@ -44,8 +44,8 @@ checkPermission("userName");
 
 #### Start
 ```
-Success response (200 : Permissions object)
+Success response (Table created successfully in the destination database.)
 
-Bad response (400 bad Request)
+Bad response (Error)
 
 ```
