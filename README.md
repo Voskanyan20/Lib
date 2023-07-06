@@ -1,4 +1,4 @@
-# check-permission-lib
+# send-tables-to-db-lib
 Lib for send needed tables with his columns from one to another db.
 
 ## Table of contents

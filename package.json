@@ -13,8 +13,8 @@
     "url": "git+https://github.com/Voskanyan20/Lib.git"
   },
   "keywords": [
-    "rbac",
-    "checkpermission"
+    "sendTable",
+    "sendOneToAnotherDB"
   ],
   "author": "Manuk Voskanyan , David Papoyan",
   "license": "ISC",
