@@ -26,7 +26,7 @@ npm i send-tables-to-db-lib
 ## Start Plugin
 
 ```Terminal
-npm run dev or node indexjs
+npm run dev or node index.js
 ```
 <div id='functions'></div>
 
@@ -35,7 +35,8 @@ npm run dev or node indexjs
 Function that starts will send a few tables with his columns to another db
 
 ```javascript
-createTable(tableName);
+ You have to write destionation db config in the function
+ createTable('userName', 'Host', 'DataBase', 'Password', 'port');
 ```
 <div id='result-plugin'></div>
 
