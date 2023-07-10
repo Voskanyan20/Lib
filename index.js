@@ -20,7 +20,8 @@ const createTable = async (user, host, database, password, port) => {
       res.push(row.tablename)
     })
     
-    const result = res.filter(name => name === "roles" || name === "permissions")
+    const result = res.filter(name => name === "roles" || name === "permissions" || name === "rolePermissions")
+    console.log(result);
 
     const destinationClient = new Client({
       user: user,
