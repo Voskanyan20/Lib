@@ -1,12 +1,15 @@
 const { Client } = require('pg')
+const dotenv = require("dotenv");
+dotenv.config();
 
 const sourceClient = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'postgres',
-  port: 5432
+  user: process.env.DB_USERNAME,
+  host: process.env.HOST,
+  database: process.env.DB_NAME,
+  password: process.env.PASSWORD,
+  port: process.env.PORT
 })
+
 sourceClient.connect()
 
 const createTable = async (user, host, database, password, port) => {
