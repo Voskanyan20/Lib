@@ -1,5 +1,5 @@
 # send-tables-to-db-lib
-Lib for send needed tables with his columns from one to another db.
+Lib for send needed tables with his columns from one to another db and check userPermissions with Authorisation.
 
 ## Table of contents
 - [Installation](#installation)
@@ -11,7 +11,7 @@ Lib for send needed tables with his columns from one to another db.
 
 One file with all the functionality of the plugin
 ```javascript
-index.js
+/index.js
 ```
 <div id='installation'></div>
 
@@ -32,12 +32,21 @@ npm run dev or node index.js
 
 ## Functions
 
-Function that starts will send a few tables with his columns to another db
+1. Function that starts will send a few tables with his columns to another db
 
 ```javascript
  You have to write destionation db config in the function
  createTable('userName', 'Host', 'DataBase', 'Password', 'port');
 ```
+
+2. When written true userName and password in that function will response user Permissions 
+
+```javascript
+    You have to write userName and password in the function
+    CheckUserPermissions("userName", "password");
+```
+
+
 <div id='result-plugin'></div>
 
 ## The result of the plugin
@@ -45,8 +54,23 @@ Function that starts will send a few tables with his columns to another db
 
 #### Start
 ```
-Success response (Table created successfully in the destination database.)
+1. Send tables response
 
+Success response (Table created successfully in the destination database.)
 Bad response (Error)
 
+2. Check User Permissions
+
+Succes request:
+    data: {
+        message: 'Succes Request',
+        permissions: [
+            ...
+        ]
+    }
+
+
+Bad Request: 
+
+Message: 400 Bad Request
 ```

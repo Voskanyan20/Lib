@@ -1,7 +1,9 @@
+const axios = require('axios')
 const { Client } = require('pg')
-const dotenv = require("dotenv");
-dotenv.config();
+const dotenv = require('dotenv')
+dotenv.config()
 
+////Send Tables to another
 const sourceClient = new Client({
   user: process.env.DB_USERNAME,
   host: process.env.HOST,
@@ -10,7 +12,8 @@ const sourceClient = new Client({
   port: process.env.PORT
 })
 
-sourceClient.connect()
+sourceClient.connect();
+
 
 const createTable = async (user, host, database, password, port) => {
   try {
@@ -22,7 +25,7 @@ const createTable = async (user, host, database, password, port) => {
     query.rows.forEach(row => {
       res.push(row.tablename)
     })
-    
+
     const result = res.filter(name => name === "roles" || name === "permissions" || name === "rolePermissions")
     console.log(result);
 
@@ -88,4 +91,45 @@ const createTable = async (user, host, database, password, port) => {
     console.log(error)
   }
 }
-// createTable('postgres', 'localhost', 'postgres1', 'postgres', '5432');
+// createTable('postgres', 'localhost', 'user1', 'postgres', '5432');
+
+///Check User Permissions
+
+// console.log(instance);
+
+const CheckUserPermissions = async (userName, password , req , res) => {
+  let userToken = ''
+  await axios
+    .post('http://localhost:8080/private/userLogin/', {
+      userName: userName,
+      password: password
+    })
+    .then(res => {
+      userToken = res.data.token
+      console.log(res.data.token)
+      return userToken
+    })
+    .catch(err => {
+      console.log(err)
+    })
+
+    // console.log(userToken);
+    await axios
+      .post(
+        'http://localhost:8080/private/checkUserPermissions/',
+        {
+          userName: userName
+        },
+        { headers: { Authorization: `${userToken}` } }
+      )
+      .then(res => {
+        console.log(res)
+        return res        
+      })
+      .catch(err => {
+        console.error(err)
+      })
+}
+
+CheckUserPermissions('John Doe', 'admin')
+//CheckUserPermissions(userName, 'password')
