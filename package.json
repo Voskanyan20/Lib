@@ -1,6 +1,6 @@
 {
   "name": "send-tables-to-db-lib",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "This is a lib who send needed tables from one to another db and check user permission with Authorisation",
   "main": "index.js",
   "scripts": {

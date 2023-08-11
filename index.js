@@ -106,11 +106,10 @@ const CheckUserPermissions = async (userName, password , req , res) => {
     })
     .then(res => {
       userToken = res.data.token
-      console.log(res.data.token)
-      return userToken
+      return userToken;
     })
     .catch(err => {
-      console.log(err)
+      console.log(err.response.data)
     })
 
     // console.log(userToken);
@@ -123,11 +122,11 @@ const CheckUserPermissions = async (userName, password , req , res) => {
         { headers: { Authorization: `${userToken}` } }
       )
       .then(res => {
-        console.log(res)
-        return res        
+        console.log(res.data)
+        return res.data        
       })
       .catch(err => {
-        console.error(err)
+        console.error(err.response.data)
       })
 }
 
